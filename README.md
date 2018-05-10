@@ -1,6 +1,6 @@
 # GoCD SAML Auth Plugin
 
-This plugin allows you to use SAML as you identity provider for GoCD. It has been tested with Centrify as the provider.
+This plugin allows you to use SAML as your identity provider for GoCD. It has been tested with Centrify as the provider.
 
 The documentation for authorization plugins is hosted [here](https://plugin-api.gocd.io/current/authorization/)
 

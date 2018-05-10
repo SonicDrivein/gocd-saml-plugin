@@ -1,0 +1,22 @@
+<div class="form_item_block">
+    <label ng-class="{'is-invalid-label': GOINPUTNAME[AuthorizationUrlField].$error.server}">Authorization Server URL (idp):<span class='asterix'>*</span></label>
+    <input ng-class="{'is-invalid-input': GOINPUTNAME[AuthorizationUrlField].$error.server}"
+           type="text"
+           ng-model="AuthorizationUrlField"
+           ng-required="true"
+           placeholder="The external authorization server URL to which GoCD redirects the user for authentication."/>
+
+    <label ng-class="{'is-invalid-label': GOINPUTNAME[SamlMetadataPath].$error.server}">SAML Metadata Path:<span class='asterix'>*</span></label>
+    <input ng-class="{'is-invalid-input': GOINPUTNAME[SamlMetadataPath].$error.server}"
+           type="text"
+           ng-model="SamlMetadataPath"
+           ng-required="true"
+           placeholder="The path in the server for the SAML metadata file."/>
+
+    <span class="form_error form-error"
+          ng-class="{'is-visible': GOINPUTNAME[AuthorizationUrlField].$error.server}"
+          ng-show="GOINPUTNAME[AuthorizationUrlField].$error.server">{{GOINPUTNAME[AuthorizationUrlField].$error.server}}</span>
+    <span class="form_error form-error"
+          ng-class="{'is-visible': GOINPUTNAME[SamlMetadataPath].$error.server}"
+          ng-show="GOINPUTNAME[SamlMetadataPath].$error.server">{{GOINPUTNAME[SamlMetadataPath].$error.server}}</span>
+</div>

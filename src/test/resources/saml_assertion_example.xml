@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<saml2p:Response ID="_b119bb8d-3678-4adc-84a5-833339102538" Version="2.0" IssueInstant="2017-08-22T22:57:58.889Z"
+                 Destination="http://localhost:8153/go/plugin/cd.go.auth.saml/authenticate"
+                 xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol">
+    <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">
+        https://sp.provider/app-id
+    </Issuer>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#_b119bb8d-3678-4adc-84a5-833339102538">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>noneedtobevalid</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>
+            doesntneedtobevalid
+        </SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>
+                    <!-- this is an example signature from http://fm4dd.com/openssl/certexamples.htm -->
+                    MIICVjCCAb8CAg37MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwGA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNEREMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdlYiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIwODIyMDUyNzIzWhcNMTcwODIxMDUyNzIzWjBKMQswCQYDVQQGEwJKUDEOMAwGA1UECAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA93d3cuZXhhbXBsZS5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMYBBrx5PlP0WNI/ZdzD+6Pktmurn+F2kQYbtc7XQh8/LTBvCo+P6iZoLEmUA9e7EXLRxgU1CVqeAi7QcAn9MwBlc8ksFJHB0rtf9pmf8Oza9E0Bynlq/4/Kb1x+d+AyhL7oK9tQwB24uHOueHi1C/iVv8CSWKiYe6hzN1txYe8rAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAASPdjigJkXCqKWpnZ/Oc75EUcMi6HztaW8abUMlYXPIgkV2F7YanHOB7K4f7OOLjiz8DTPFfjC9UeuErhaA/zzWi8ewMTFZW/WshOrm3fNvcMrMLKtH534JKvcdMg6qIdjTFINIrevnAhf0cwULaebn+lMs8Pdl7y37+sfluVok=
+                </X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+    <saml2p:Status>
+        <saml2p:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/>
+    </saml2p:Status>
+    <Assertion Version="2.0" ID="_9775ad6a-e52f-4286-a848-bea560d6461b" IssueInstant="2017-08-22T22:57:58.873Z"
+               xmlns="urn:oasis:names:tc:SAML:2.0:assertion">
+        <Issuer>https://sp.provider/app-id</Issuer>
+        <Subject>
+            <NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">temp_user@sonicdrivein.com
+            </NameID>
+            <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+                <SubjectConfirmationData NotOnOrAfter="2017-08-22T23:57:58.873Z"
+                                         Recipient="http://localhost:8153/go/plugin/cd.go.auth.saml/authenticate"/>
+            </SubjectConfirmation>
+        </Subject>
+        <Conditions NotBefore="2017-08-22T22:54:58.873Z" NotOnOrAfter="2017-08-22T23:57:58.873Z">
+            <AudienceRestriction>
+                <Audience>example-audience-value</Audience>
+            </AudienceRestriction>
+        </Conditions>
+        <AuthnStatement AuthnInstant="2017-08-22T22:57:58.873Z" SessionIndex="_9775ad6a-e52f-4286-a848-bea560d6461b">
+            <AuthnContext>
+                <AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified</AuthnContextClassRef>
+            </AuthnContext>
+        </AuthnStatement>
+        <AttributeStatement>
+            <Attribute Name="Groups" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+                <AttributeValue>silly-group</AttributeValue>
+                <AttributeValue>very-silly-group</AttributeValue>
+            </Attribute>
+        </AttributeStatement>
+    </Assertion>
+</saml2p:Response>
